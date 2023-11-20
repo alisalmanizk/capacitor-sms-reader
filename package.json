@@ -1,6 +1,6 @@
 {
-  "name": "capacitor-sms-inbox",
-  "version": "1.1.1",
+  "name": "capacitor-sms-inbox-fork",
+  "version": "1.0.1",
   "description": "A capacitor plugin to read SMS inbox",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -17,10 +17,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/saurabhgupta050890/capacitor-sms-inbox.git"
+    "url": "git+https://github.com/didi110296/capacitor-sms-inbox-fork.git"
   },
   "bugs": {
-    "url": "https://github.com/saurabhgupta050890/capacitor-sms-inbox/issues"
+    "url": "https://github.com/didi110296/capacitor-sms-inbox-fork/issues"
   },
   "keywords": [
     "capacitor",
@@ -44,10 +44,10 @@
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@capacitor/android": "^4.0.0",
-    "@capacitor/core": "^4.0.0",
+    "@capacitor/android": "^5.5.1",
+    "@capacitor/core": "^5.5.1",
     "@capacitor/docgen": "^0.0.18",
-    "@capacitor/ios": "^4.0.0",
+    "@capacitor/ios": "^5.5.1",
     "@ionic/eslint-config": "^0.3.0",
     "@ionic/prettier-config": "^1.0.1",
     "@ionic/swiftlint-config": "^1.1.2",
@@ -61,7 +61,7 @@
     "typescript": "~4.1.5"
   },
   "peerDependencies": {
-    "@capacitor/core": "^4.0.0"
+    "@capacitor/core": "^5.5.1"
   },
   "prettier": "@ionic/prettier-config",
   "swiftlint": "@ionic/swiftlint-config",

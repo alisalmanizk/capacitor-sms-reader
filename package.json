@@ -1,6 +1,6 @@
 {
-  "name": "capacitor-sms-inbox-fork",
-  "version": "1.0.1",
+  "name": "capacitor-sms-reader",
+  "version": "1.0.0",
   "description": "A capacitor plugin to read SMS inbox",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -9,29 +9,26 @@
   "files": [
     "android/src/main/",
     "android/build.gradle",
-    "dist/",
-    "ios/Plugin/",
-    "CapacitorSmsInbox.podspec"
+    "dist/"
   ],
-  "author": "Saurabh Gupta",
+  "author": "Osama Soliman",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/didi110296/capacitor-sms-inbox-fork.git"
+    "url": "git+https://github.com/solimanware/capacitor-sms-reader.git"
   },
   "bugs": {
-    "url": "https://github.com/didi110296/capacitor-sms-inbox-fork/issues"
+    "url": "https://github.com/solimanware/capacitor-sms-reader/issues"
   },
   "keywords": [
     "capacitor",
     "plugin",
     "native"
   ],
+  "type": "module",
   "scripts": {
-    "verify": "npm run verify:ios && npm run verify:android && npm run verify:web",
-    "verify:ios": "cd ios && pod install && xcodebuild -workspace Plugin.xcworkspace -scheme Plugin -destination generic/platform=iOS && cd ..",
+    "verify": "npm run verify:android",
     "verify:android": "cd android && ./gradlew clean build test && cd ..",
-    "verify:web": "npm run build",
     "lint": "npm run eslint && npm run prettier -- --check && npm run swiftlint -- lint",
     "fmt": "npm run eslint -- --fix && npm run prettier -- --write && npm run swiftlint -- --fix --format",
     "eslint": "eslint . --ext ts",
@@ -44,24 +41,21 @@
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@capacitor/android": "^5.5.1",
-    "@capacitor/core": "^5.5.1",
-    "@capacitor/docgen": "^0.0.18",
-    "@capacitor/ios": "^5.5.1",
-    "@ionic/eslint-config": "^0.3.0",
-    "@ionic/prettier-config": "^1.0.1",
-    "@ionic/swiftlint-config": "^1.1.2",
-    "eslint": "^7.11.0",
-    "eslint-plugin-import": "^2.27.5",
-    "prettier": "~2.3.0",
-    "prettier-plugin-java": "~1.0.2",
-    "rimraf": "^3.0.2",
-    "rollup": "^2.32.0",
-    "swiftlint": "^1.0.1",
-    "typescript": "~4.1.5"
+    "@capacitor/android": "^6.1.2",
+    "@capacitor/core": "^6.1.2",
+    "@capacitor/docgen": "^0.2.1",
+    "@ionic/eslint-config": "^0.4.0",
+    "@ionic/prettier-config": "^4.0.0",
+    "eslint": "^8.53.0",
+    "eslint-plugin-import": "^2.29.0",
+    "prettier": "^3.1.0",
+    "prettier-plugin-java": "^2.3.1",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.5.0",
+    "typescript": "~5.2.2"
   },
   "peerDependencies": {
-    "@capacitor/core": "^5.5.1"
+    "@capacitor/core": "^6.1.2"
   },
   "prettier": "@ionic/prettier-config",
   "swiftlint": "@ionic/swiftlint-config",
@@ -69,9 +63,6 @@
     "extends": "@ionic/eslint-config/recommended"
   },
   "capacitor": {
-    "ios": {
-      "src": "ios"
-    },
     "android": {
       "src": "android"
     }

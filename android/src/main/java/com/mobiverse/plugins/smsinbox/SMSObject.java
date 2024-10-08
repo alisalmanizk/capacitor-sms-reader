@@ -1,4 +1,4 @@
-package com.mobiverse.plugins.smsinbox;
+package ai.soliman.smsreader;
 
 import android.database.Cursor;
 import android.provider.BaseColumns;

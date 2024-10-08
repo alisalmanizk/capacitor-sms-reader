@@ -7,7 +7,7 @@ A Capacitor plugin to read SMS inbox on Android devices.
 1. Install the plugin:
 
 ```bash
-npm i git+https://github.com/solimanware/capacitor-sms-reader.git
+npm i @solimanware/capacitor-sms-reader
 ```
 
 2. Sync your Capacitor project:

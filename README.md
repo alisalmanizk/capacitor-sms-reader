@@ -1,13 +1,65 @@
 # capacitor-sms-inbox
 
-A capacitor plugin to read SMS inbox
+A Capacitor plugin to read SMS inbox on Android devices.
 
-## Install
+## Installation
+
+1. Install the plugin:
 
 ```bash
-npm install capacitor-sms-inbox
+npm i git+https://github.com/solimanware/capacitor-sms-reader.git
+```
+
+2. Sync your Capacitor project:
+
+```bash
 npx cap sync android
 ```
+
+3. Add the following permissions to your `AndroidManifest.xml` file:
+
+```xml
+<uses-permission android:name="android.permission.READ_SMS" />
+<uses-permission android:name="android.permission.RECEIVE_SMS" />
+```
+
+4. In your Capacitor config file (usually `capacitor.config.json` or `capacitor.config.ts`), add the following:
+
+```json
+{
+  "plugins": {
+    "SMSInboxReader": {
+      "android": {
+        "name": "com.capacitor.sms.reader.SMSInboxReaderPlugin"
+      }
+    }
+  }
+}
+```
+
+5. Import and initialize the plugin in your TypeScript/JavaScript code:
+
+```typescript
+import { Plugins } from '@capacitor/core';
+import { SMSInboxReader } from 'capacitor-sms-reader';
+
+// Use the plugin
+const { SMSInboxReader } = Plugins;
+
+// Check permissions
+const permissionStatus = await SMSInboxReader.checkPermissions();
+if (permissionStatus.sms !== 'granted') {
+  await SMSInboxReader.requestPermissions();
+}
+
+// Now you can use other methods like getCount(), getSMSList(), etc.
+```
+
+## Usage
+
+After installation, you can use the plugin's methods to interact with the SMS inbox. Remember to always check and request permissions before accessing SMS data.
+
+For detailed API documentation, see the [API section](#api) below.
 
 ## API
 
